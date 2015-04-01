@@ -20,8 +20,8 @@ Scene* StartScene::createScene()
 // on "init" you need to initialize your instance
 bool StartScene::init()
 {
-    // 1. super init first
-    if ( !Layer::init() )
+    // 1. super init fir
+    if (!Layer::init())
     {
         return false;
     }

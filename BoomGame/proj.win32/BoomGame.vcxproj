@@ -143,6 +143,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CallAndroidMethod.cpp" />
     <ClCompile Include="..\Classes\GamePauseLayer.cpp" />
     <ClCompile Include="..\Classes\GamePayHandler.cpp" />
+    <ClCompile Include="..\Classes\LevelInfoScene.cpp" />
+    <ClCompile Include="..\Classes\LevelLayer.cpp" />
+    <ClCompile Include="..\Classes\LevelScene.cpp" />
+    <ClCompile Include="..\Classes\LevelSelectPage.cpp" />
+    <ClCompile Include="..\Classes\LoadingResScene.cpp" />
+    <ClCompile Include="..\Classes\LoadLevelInfo.cpp" />
     <ClCompile Include="..\Classes\StartScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -153,6 +159,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CallAndroidMethod.h" />
     <ClInclude Include="..\Classes\GamePauseLayer.h" />
     <ClInclude Include="..\Classes\GamePayHandler.h" />
+    <ClInclude Include="..\Classes\LevelInfoScene.h" />
+    <ClInclude Include="..\Classes\LevelLayer.h" />
+    <ClInclude Include="..\Classes\LevelScene.h" />
+    <ClInclude Include="..\Classes\LevelSelectPage.h" />
+    <ClInclude Include="..\Classes\LoadingResScene.h" />
+    <ClInclude Include="..\Classes\LoadLevelInfo.h" />
     <ClInclude Include="..\Classes\StartScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
