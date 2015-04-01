@@ -141,6 +141,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Audio.cpp" />
     <ClCompile Include="..\Classes\BlinkTitle.cpp" />
     <ClCompile Include="..\Classes\CallAndroidMethod.cpp" />
+    <ClCompile Include="..\Classes\GameData.cpp" />
     <ClCompile Include="..\Classes\GamePauseLayer.cpp" />
     <ClCompile Include="..\Classes\GamePayHandler.cpp" />
     <ClCompile Include="..\Classes\LevelInfoScene.cpp" />
@@ -157,6 +158,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Audio.h" />
     <ClInclude Include="..\Classes\BlinkTitle.h" />
     <ClInclude Include="..\Classes\CallAndroidMethod.h" />
+    <ClInclude Include="..\Classes\GameData.h" />
     <ClInclude Include="..\Classes\GamePauseLayer.h" />
     <ClInclude Include="..\Classes\GamePayHandler.h" />
     <ClInclude Include="..\Classes\LevelInfoScene.h" />
