@@ -1,9 +1,7 @@
 #include "GamePauseLayer.h"
 #include "SimpleAudioEngine.h"
-#include "GameLayer.h"
 #include "Audio.h"
 #include "GameData.h"
-#include "GameState.h"
 #include "StartScene.h"
 
 
@@ -72,15 +70,15 @@ void GamePauseLayer::payProps(){
 }
 
 void GamePauseLayer::goBack(){
-	GAMEDATA::getInstance()->cleanDatas();
-	GAMESTATE::getInstance()->reset();
+	//GAMEDATA::getInstance()->cleanDatas();
+	//GAMESTATE::getInstance()->reset();
 	this->removeFromParentAndCleanup(true);
 	Director::getInstance()->replaceScene(TransitionFade::create(1,StartScene::createScene()));	
 }
 
 void GamePauseLayer::ResumeGame(){
 	this->removeFromParentAndCleanup(true);
-	GAMESTATE::getInstance()->setGamePause(false);
+	//GAMESTATE::getInstance()->setGamePause(false);
 }
 
 

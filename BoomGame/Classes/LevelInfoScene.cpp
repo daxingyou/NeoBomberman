@@ -1,5 +1,4 @@
 #include "LevelInfoScene.h"
-#include "PlayLayer.h"
 #include "LevelScene.h"
 #include "GameData.h"
 #include "SimpleAudioEngine.h"  
@@ -97,5 +96,5 @@ void LevelInfoScene::menuStartCallback(Ref* pSender)
 	SimpleAudioEngine::getInstance()->playEffect(FileUtils::getInstance()->fullPathForFilename("sound/button.wav").c_str(), false);
 	info = LoadLevelinfo::createLoadLevelinfo(fileName.c_str());
 	info->readLevelInfo();
-	Director::getInstance()->replaceScene(TransitionFadeBL::create(0.1f, PlayLayer::createScene()));
+	//Director::getInstance()->replaceScene(TransitionFadeBL::create(0.1f, PlayLayer::createScene()));
 }

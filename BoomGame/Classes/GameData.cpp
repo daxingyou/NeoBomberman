@@ -9,7 +9,7 @@ GAMEDATA::GAMEDATA(){
 }
 
 void GAMEDATA::init(){
-	currentWave=0;
+    //TODO
 }
 
 GAMEDATA* GAMEDATA::getInstance(){
@@ -35,21 +35,6 @@ bool GAMEDATA::getMusicState() {
 	return UserDefault::getInstance()->getBoolForKey("musicState",true);
 }
 
-float GAMEDATA::getTowerFrequency(){
-	return UserDefault::getInstance()->getFloatForKey("towerFrequency",0.8); 
-}
+void GAMEDATA::clear(){
 
-int GAMEDATA::getTowerRange(){
-	return UserDefault::getInstance()->getIntegerForKey("towerRange",50); 
 }
-
-void GAMEDATA::doubleTowerFrequency(){
-	auto fre = getTowerFrequency()/2;
-	UserDefault::getInstance()->setFloatForKey("towerFrequency",fre);
-}
-
-void GAMEDATA::doubleTowerRange(){
-	auto range = getTowerRange()*2;
-	UserDefault::getInstance()->setFloatForKey("towerFrequency",range);
-}
-void GAMEDATA::clear(){}
