@@ -28,7 +28,13 @@ bool StartScene::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	//Ìí¼ÓÓÎÏ·±³¾°
+	Sprite* game_bg = Sprite::create("game_bg.png");
+	game_bg->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	this->addChild(game_bg,-1);
     
+
     return true;
 }
 

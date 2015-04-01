@@ -29,7 +29,19 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLViewImpl::create("My Game");
         director->setOpenGLView(glview);
     }
-
+	//根据平台来选择屏幕的比例
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	glview->setDesignResolutionSize(800, 480, kResolutionExactFit);
+#endif
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	if (visibleSize.width / visibleSize.height > 800.0 / 480.0){
+		glview->setDesignResolutionSize(800, 480, ResolutionPolicy::EXACT_FIT);
+	}
+	else{
+		glview->setDesignResolutionSize(800, 480, ResolutionPolicy::NO_BORDER);
+	}
+#endif
     // turn on display FPS
     director->setDisplayStats(true);
 
