@@ -12,6 +12,7 @@ public:
     virtual bool init();   
     // implement the "static create()" method manually
 	CREATE_FUNC(StartScene);
+	void startGame();
 };
 
 #endif // __HELLOWORLD_SCENE_H__

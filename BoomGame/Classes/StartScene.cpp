@@ -1,5 +1,5 @@
 #include "StartScene.h"
-
+#include "GameScene.h"
 USING_NS_CC;
 
 Scene* StartScene::createScene()
@@ -33,8 +33,16 @@ bool StartScene::init()
 	Sprite* game_bg = Sprite::create("game_bg.png");
 	game_bg->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 	this->addChild(game_bg,-1);
-    
 
+	//for test create a start button
+	MenuItemImage* image = MenuItemImage::create("start_game_txt.png", "start_game_txt.png", CC_CALLBACK_0(StartScene::startGame,this));
+	Menu* start_menu = Menu::create(image, NULL);
+	start_menu->setPosition(visibleSize.width/2,visibleSize.height/2);
+	this->addChild(start_menu);
     return true;
+
 }
 
+void StartScene::startGame(){
+	Director::getInstance()->replaceScene(TransitionFade::create(1, GameScene::create()));
+}
