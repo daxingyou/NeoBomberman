@@ -10,4 +10,5 @@ bool GameLayer::init(){
 	game_bg->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 	this->addChild(game_bg, -1);
 	return true;
+
 }
