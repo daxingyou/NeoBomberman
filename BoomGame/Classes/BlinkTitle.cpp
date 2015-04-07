@@ -1,4 +1,4 @@
-#include "BlinkTitle.h"
+ #include "BlinkTitle.h"
 
 BlinkTitle::BlinkTitle()
 {}
@@ -8,8 +8,8 @@ BlinkTitle* BlinkTitle::create(const std::string& fileName){
 	if(ret && ret->init(fileName)){
 		ret->autorelease();
 		return ret;
-	}
 	CC_SAFE_DELETE(ret);
+	}
 	return nullptr;
 }
 
