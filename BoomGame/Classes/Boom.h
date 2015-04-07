@@ -8,10 +8,14 @@ public :
 	bool init();
 	CREATE_FUNC(Boom);
 	void setBoomProperty(int id);
+	int getBoomRange();
+	int getBoomWeight();
+	int getBoomDamage();
 private :
 	Sprite* myBoom;
 	int range;
 	int damage;
 	int weight;
+	void initData();
 };
 #endif
