@@ -39,6 +39,7 @@ void BoomInfoUtil::init(){
 		info.image_name=temp["name"].GetString();
 		info.range = temp["range"].GetInt();
 		info.weight = temp["weight"].GetInt();
+		info.damage = temp["damage"].GetInt();
 		infoMap.insert(make_pair(key,info));
 	}
 	return;

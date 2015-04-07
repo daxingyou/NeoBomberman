@@ -1,11 +1,14 @@
 #ifndef _BOOM_INFO_H_
 #define _BOOM_INFO_H_
+#include <string>
+using namespace std;
+
 class BoomInfo{
 public:
 	int id;
 	int range;
-	std::string image_name;
 	int weight;
-	int speed;
+	int damage;
+	string image_name;
 };
 #endif
