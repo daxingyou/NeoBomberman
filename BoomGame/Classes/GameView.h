@@ -12,7 +12,7 @@ public:
 	void onTouchMoved(Touch *touch, Event  *event);
 	void onTouchEnded(Touch *touch, Event  *event);
 private :
-	Boom* createBoom();//
+	Boom* createBoom();//产生一个炸弹
 };
 
 

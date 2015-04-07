@@ -11,3 +11,7 @@ bool GameView::init(){
 	touchEvent->onTouchEnded = CC_CALLBACK_2(GameView::onTouchEnded, this);
 	return true;
 }
+
+Boom* GameView::createBoom(){
+	Boom* boom = Boom::create();
+}

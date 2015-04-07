@@ -13,9 +13,11 @@ class Boom : public Sprite{
 public :
 	bool init();
 	CREATE_FUNC(Boom);
+	void setBoomProperty(int type);
 private:
 	int range;//±¨’®∑∂Œß
 	int weight;//’®µØ÷ ¡ø
 	int type;//’®µØ¿‡–Õ
+	int damage;
 };
 #endif

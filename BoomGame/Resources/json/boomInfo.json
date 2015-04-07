@@ -1,0 +1,32 @@
+{
+	"boom":[
+		{ 
+			"id":0,
+			"name":"boom",
+			"range":0,
+			"weight":50,
+			"damage":50
+		},
+		{ 
+			"id":1,
+			"name":"boom",
+			"range":0,
+			"weight":50,
+			"damage":50
+		},
+		{ 
+			"id":2,
+			"name":"boom",
+			"range":0,
+			"weight":50,
+			"damage":50
+		},
+		{ 
+			"id":3,
+			"name":"boom",
+			"range":0,
+			"weight":50,
+			"damage":50
+		}
+	]
+}
