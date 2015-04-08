@@ -1,5 +1,7 @@
 #include "GameView.h"
 #define GRAVITR (10)
+#define MAX_SPEED (25)//抛出物体的最大速度
+
 
 bool GameView::init(){
 	if (!Layer::init()){
@@ -7,6 +9,7 @@ bool GameView::init(){
 	}
 	initData();
 	Size visibleSize = Director::getInstance()->getVisibleSize();
+
 	//boom test 
     curBoom = createBoom(1);
 	curBoom->setAnchorPoint(Point::ANCHOR_MIDDLE);
@@ -18,15 +21,16 @@ bool GameView::init(){
 	touchEvent->onTouchMoved = CC_CALLBACK_2(GameView::onTouchMoved,this);
 	touchEvent->onTouchEnded = CC_CALLBACK_2(GameView::onTouchEnded, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchEvent, this);
-	scheduleUpdate();
+	//scheduleUpdate();
+	schedule(schedule_selector(GameView::updateTest),1.0f, kRepeatForever,0);
 	return true;
 }
 
 void GameView::initData(){
 	 degree = 0;
-	 force = 0;
-	 speed_x = 0;
-	 speed_y = 0;
+	 speed = 0;
+	 //speed_x = 0;
+	 //speed_y = 0;
 	 shoting = false;
 }
 
@@ -45,6 +49,7 @@ bool GameView::onTouchBegan(Touch *touch, Event  *event){
 void GameView::onTouchMoved(Touch *touch, Event  *event){
 	Point curpoint = touch->getLocation();
 	int distance = curpoint.distance(touchlocation);
+
 }
 
 void GameView::onTouchEnded(Touch *touch, Event  *event){
@@ -52,8 +57,7 @@ void GameView::onTouchEnded(Touch *touch, Event  *event){
 	int distance = endpint.distance(touchlocation);
 	degree = getDegreeByPoint(touchlocation, endpint);
 	//get the force by distance
-	force = getForceByDistance(distance);
-	speed_x = force / curBoom->getBoomWeight();
+	speed = getSpeedByDistance(distance);
 	shoting = true;
 }
 
@@ -65,20 +69,32 @@ float GameView::getDegreeByPoint(Point sp,Point ep){
 }
 
 //get force by move distacne
-float GameView::getForceByDistance(float distance){
+float GameView::getSpeedByDistance(float distance){
 	if (distance > 0){
-		float myforce = distance * 1;//
-		if (myforce > 100){
-			myforce = 100;
+		float mySpeed = distance * 1;//
+		if (mySpeed > MAX_SPEED){
+			mySpeed = MAX_SPEED;
 		}
-		return myforce;
+		return mySpeed;
 	}
 	return 0;
 }
 
 void GameView::update(float dt){
 	if (shoting){
-		speed_y += GRAVITR*dt;
-		curBoom->setPosition(curBoom->getPosition().x + speed_x, curBoom->getPosition().y - speed_y);
+		/*speed_y += GRAVITR*dt;
+		curBoom->setPosition(curBoom->getPosition().x + speed_x, curBoom->getPosition().y - speed_y);*/
 	}	
 }
+
+void GameView::updateTest(float dt){
+	if (shoting){
+		//speed_y += GRAVITR*dt;
+		//curBoom->setPosition(curBoom->getPosition().x + speed_x, curBoom->getPosition().y - speed_y);
+	}
+}
+
+std::vector <Point> GameView::calculateSubLine(Point sp,float speed, float degree){
+	int speed_x = speed*cos(degree);
+	
+} 
