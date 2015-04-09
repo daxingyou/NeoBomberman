@@ -42,3 +42,8 @@ void Boom::initData(){
 	this->damage = 0;
 	this->weight = 0;
 }
+
+//double damage
+void Boom::doubleBoomDamage(){
+	this->damage = this->damage * 2;
+}

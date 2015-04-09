@@ -129,7 +129,7 @@ std::vector <Point> GameView::calculateSubLine(Point sp, float speed, float degr
 	float y = sp.y;
 	float x = sp.x;
 	while (y > 0){
-		x += 5;
+		x += 10;
 		y = A*x*x + B*x + C;
 		subline.push_back(Point(x, y));
 		CCLOG("subline x = %f", x);

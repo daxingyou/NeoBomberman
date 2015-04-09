@@ -11,6 +11,7 @@ public :
 	int getBoomRange();
 	int getBoomWeight();
 	int getBoomDamage();
+	void doubleBoomDamage();
 private :
 	Sprite* myBoom;
 	int range;
