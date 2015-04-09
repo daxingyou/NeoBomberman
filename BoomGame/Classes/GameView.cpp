@@ -95,6 +95,17 @@ void GameView::updateTest(float dt){
 }
 
 std::vector <Point> GameView::calculateSubLine(Point sp,float speed, float degree){
-	int speed_x = speed*cos(degree);
-	
+	float speed_x = speed*cos(degree);
+	float speed_y = speed*sin(degree);
+	float t = speed_y / GRAVITR;
+	Point top = Point(sp.x+speed_x*t, sp.y+speed_y - GRAVITR*t*t / 2);//抛物线的顶点坐标
+	//间隔5个像素，绘制一个点
+	float y = sp.y;
+	float x = sp.x;
+	while (y > 0){
+		x += 5;
+		y = -(x - top.x)*(x - top.x) + top.y;
+		subline.push_back(Point(x,y));
+	}
+	return subline;
 } 
