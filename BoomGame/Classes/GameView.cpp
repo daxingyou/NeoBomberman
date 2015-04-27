@@ -21,8 +21,8 @@ bool GameView::init(){
 	touchEvent->onTouchMoved = CC_CALLBACK_2(GameView::onTouchMoved, this);
 	touchEvent->onTouchEnded = CC_CALLBACK_2(GameView::onTouchEnded, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchEvent, this);
-	//scheduleUpdate();
-	schedule(schedule_selector(GameView::updateTest), 1.0f, kRepeatForever, 0);
+	scheduleUpdate();
+	//schedule(schedule_selector(GameView::updateTest), 1.0f, kRepeatForever, 0);
 	return true;
 }
 
@@ -87,6 +87,13 @@ void GameView::update(float dt){
 	if (shoting){
 		/*speed_y += GRAVITR*dt;
 		curBoom->setPosition(curBoom->getPosition().x + speed_x, curBoom->getPosition().y - speed_y);*/
+		if (subline.size() > 0){
+			for (Point dp : subline){
+				DrawNode* drawNode = DrawNode::create();
+				this->addChild(drawNode);
+				drawNode->drawDot(dp, 5, Color4F(255, 255, 255, 255));
+			}
+		}
 	}
 }
 
@@ -103,6 +110,12 @@ void GameView::updateTest(float dt){
 		}
 	}
 }
+
+//是发射的物体沿着特定的轨迹移动
+void GameView::shootBoom(){
+
+
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 
 std::vector <Point> GameView::calculateSubLine(Point sp, float speed, float degree){
 	CCLOG("degree = %f", CC_RADIANS_TO_DEGREES(degree));

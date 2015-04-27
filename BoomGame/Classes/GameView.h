@@ -16,6 +16,7 @@ public:
 	void update(float dt);
 	void updateTest(float dt);
 	std::vector <Point> calculateSubLine(Point sp,float speed, float degree);//计算辅助线
+	void shootBoom();
 private :
 	Boom* createBoom(int id);//产生一个炸弹
 	Boom* curBoom;
